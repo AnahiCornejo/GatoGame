@@ -8,6 +8,30 @@ GATO (^(x.0)^)
     <h4>Sebastian Hernandez Angeles</h4>
     <h4>Carmen Anai Cornejo Lopez</h4>
 </div>
-
+<h1>Descripción del Juego "Gato y Ratón"</h1>
+<p><strong>Inicio:</strong> El juego comienza y se crea la ventana principal.</p>
+<p><strong>Inicialización:</strong> Se inicializan las variables del juego, como el tablero y el contador de clics.</p>
+<p><strong>Creación de Botones:</strong> Se crean los botones que representan las casillas del tablero y el botón de reinicio.</p>
+<p><strong>Mostrar Ventana:</strong> La ventana del juego se muestra en la pantalla.</p>
+<p><strong>Función jugar(indice):</strong></p>
+<ul>
+    <li>Se verifica si la casilla seleccionada está vacía.</li>
+    <li>Si está vacía, se incrementa el contador de clics.</li>
+    <li>Dependiendo del número de clics, se asigna "0" o "X" a la casilla.</li>
+    <li>Se actualiza el texto del botón correspondiente.</li>
+</ul>
+<p><strong>Verificación de Ganador:</strong></p>
+<ul>
+    <li>Se llama a la función verificar_ganador().</li>
+    <li>Se comprueba si hay un ganador o un empate.</li>
+    <li>Si hay un ganador, se muestra un mensaje y se reinicia el juego.</li>
+</ul>
+<p><strong>Empate:</strong> Si no hay ganador y todas las casillas están ocupadas, se muestra un mensaje de empate y se pregunta si se desea reiniciar.</p>
+<p><strong>Reinicio:</strong></p>
+<ul>
+    <li>Si se decide reiniciar, la función reiniciar() limpia el tablero y restablece el contador de clics.</li>
+    <li>Se actualizan los botones para reflejar el estado inicial.</li>
+</ul>
+<p><strong>Fin:</strong> El juego vuelve a estar listo para jugar.</p>
 </body>
 </html>
