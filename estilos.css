@@ -7,5 +7,9 @@
 
 }
 .inte{
-    text-align: right;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.titulo_inte{
+    font-size: 20px;
 }
