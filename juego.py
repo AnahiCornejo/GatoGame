@@ -6,14 +6,14 @@ class JuegoDelGato:
         # Inicio: Se crea la ventana principal
         self.root = root
         self.root.title("Juego del Gato")
-        self.root.configure(bg="#fce4ec")  # Color de fondo suave rosa
+        self.root.configure(bg="#ffeef8")  # Color de fondo suave rosa
 
         # Inicialización: Se inicializan las variables del juego
         self.tablero = [""] * 9  # Representa el tablero
         self.clicks = 0  # Contador de clics
         self.ganador = None
 
-        # Creación de Botones: se crean los botones que representan las casillas del tablero
+        # Creación de Botones: Se crean los botones que representan las casillas del tablero
         self.mainframe = ttk.Frame(root, padding="12 12 12 12")
         self.mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
         root.columnconfigure(0, weight=1)
@@ -62,13 +62,28 @@ class JuegoDelGato:
         for a, b, c in combinaciones_ganadoras:
             if self.tablero[a] == self.tablero[b] == self.tablero[c] != "":
                 self.ganador = self.tablero[a]
-                messagebox.showinfo("Fin del Juego", f"Ganador: {self.ganador}")
+                self.mostrar_mensaje(f"Ganador: {self.ganador}", feliz=True)  # Muestra gato feliz
                 self.reiniciar()
                 return
 
         if self.clicks == 9:  # Empate
-            messagebox.showinfo("Fin del Juego", "Empate!")
+            self.mostrar_mensaje("Empate!", feliz=False)  # Muestra gato triste
             self.reiniciar()
+
+    def mostrar_mensaje(self, resultado, feliz):
+        if feliz:
+            gato = """
+             /\_/\  
+            ( ^.^ )
+             > ^ <
+            """
+        else:
+            gato = """
+             /\_/\  
+            ( -.- )
+             > ^ <
+            """
+        messagebox.showinfo("¡Juego Terminado!", f"{resultado}\n{gato}")
 
     def reiniciar(self):
         # Reinicio:
