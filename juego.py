@@ -6,14 +6,14 @@ class JuegoDelGato:
         # Inicio: Se crea la ventana principal
         self.root = root
         self.root.title("Juego del Gato")
-        self.root.configure(bg="#e3f2fd")  # Color de fondo suave azul
+        self.root.configure(bg="#fce4ec")  # Color de fondo suave rosa
 
         # Inicialización: Se inicializan las variables del juego
         self.tablero = [""] * 9  # Representa el tablero
         self.clicks = 0  # Contador de clics
         self.ganador = None
 
-        # Creación de Botones: Se crean los botones que representan las casillas del tablero
+        # Creación de Botones: se crean los botones que representan las casillas del tablero
         self.mainframe = ttk.Frame(root, padding="12 12 12 12")
         self.mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
         root.columnconfigure(0, weight=1)
@@ -31,8 +31,8 @@ class JuegoDelGato:
 
         # Estilo para los botones
         estilo = ttk.Style()
-        estilo.configure("TButton", background="#90caf9", foreground="#0d47a1", font=("Helvetica", 16, "bold"))
-        estilo.map("TButton", background=[("active", "#64b5f6")])
+        estilo.configure("TButton", background="#f48fb1", foreground="#880e4f", font=("Helvetica", 16, "bold"))
+        estilo.map("TButton", background=[("active", "#f06292")])
 
         # Botón de reinicio
         self.reinicio_boton = ttk.Button(self.mainframe, text="Reiniciar", command=self.reiniciar, style="TButton")
