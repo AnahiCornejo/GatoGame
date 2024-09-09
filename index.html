@@ -1,15 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Gato y el Ratón</title>
     <link rel="stylesheet" href="estilos.css">
-    <h1 class="titulo">"El gato y el raton."</h1>
-    <pre class="gato">
-       /\_/\  
-      ( o.o ) 
-       > ^ <  
-    </pre>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: monospace;
+        }
+        .gato {
+            animation: mover 2s linear infinite, parpadeo 1s infinite;
+        }
+        @keyframes mover {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes parpadeo {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .titulo {
+            margin: 20px;
+        }
+        .inte {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
 
+<h1 class="titulo">"El gato y el ratón."</h1>
+
+<div class="gato">
+    <pre>
+     /\_/\  
+    ( ^.^ )
+     > ^ <
+    </pre>
+</div>
 
 <h1>Descripción del Juego.</h1>
 <p><strong>Inicio:</strong> El juego comienza y se crea la ventana principal.</p>
@@ -20,7 +56,7 @@
 <ul>
     <li>Se verifica si la casilla seleccionada está vacía.</li>
     <li>Si está vacía, se incrementa el contador de clics.</li>
-    <li>Dependiendo del número de clics, se asigna "0" o "X" a la casilla.</li>
+    <li>Dependiendo del número de clics, se asigna "O" o "X" a la casilla.</li>
     <li>Se actualiza el texto del botón correspondiente.</li>
 </ul>
 <p><strong>Verificación de Ganador:</strong></p>
@@ -39,8 +75,8 @@
 
 <div class="inte">
     <h2 class="titulo_inte">Integrantes:</h2>
-    <h4><link href="https://github.com/SebastianHernadez"> Sebastian Hernandez Angeles</link></h4>
-    <h4>Carmen Anai Cornejo Lopez</h4>
+    <h4><a href="https://github.com/SebastianHernadez">Sebastián Hernández Ángeles</a></h4>
+    <h4>Carmen Anai Cornejo López</h4>
 </div>
 
 </body>
