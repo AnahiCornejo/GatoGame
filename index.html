@@ -5,37 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Gato y el Ratón</title>
     <link rel="stylesheet" href="estilos.css">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f8ff;
-            font-family: monospace;
-        }
-        .gato {
-            animation: mover 2s linear infinite, parpadeo 1s infinite;
-        }
-        @keyframes mover {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(20px); }
-            100% { transform: translateX(0); }
-        }
-        @keyframes parpadeo {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .titulo {
-            margin: 20px;
-        }
-        .inte {
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="icon" href="img/unicornio.avif">
+
 </head>
-<body>
+<body class="titulo_inte">
 
 <h1 class="titulo">"El gato y el ratón."</h1>
 
@@ -73,10 +46,28 @@
 </ul>
 <p><strong>Fin:</strong> El juego vuelve a estar listo para jugar.</p>
 
-<div class="inte">
-    <h2 class="titulo_inte">Integrantes:</h2>
-    <h4><a href="https://github.com/SebastianHernadez">Sebastián Hernández Ángeles</a></h4>
-    <h4>Carmen Anai Cornejo López</h4>
+
+    <h1>Diagrama UML del Juego del Gato</h1>
+
+    <div class="uml-box">
+        <h2>JuegoDelGato</h2>
+        <p>- tablero: String[]</p>
+        <p>- clicks: int</p>
+        <p>- ganador: String?</p>
+        <p>- jugadorActual: String</p>
+        <p>------------------------</p>
+        <p>+ jugar(indice: int): void</p>
+        <p>+ verificar_ganador(): void</p>
+        <p>+ mostrar_mensaje(resultado: String, feliz: boolean): void</p>
+        <p>+ reiniciar(): void</p>
+        <p>+ cambiar_jugador(): void</p>
+    </div>
+    
+    <div class="inte">
+        <h2 class="titulo_inte">Integrantes:</h2>
+        <h4><a href="https://github.com/SebastianHernadez">Sebastián Hernández Ángeles</a></h4>
+        <h4><a href="https://github.com/AnahiCornejo">Anai Cornejo López</a></h4>
+    
 </div>
 
 </body>
