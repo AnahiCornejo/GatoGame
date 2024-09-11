@@ -11,7 +11,6 @@ class JuegoDelGato:
         # Inicialización: Se inicializan las variables del juego
         self.tablero = [""] * 9  # Representa el tablero
         self.clicks = 0  # Contador de clics
-        self.ganador = None
 
         # Creación de Botones: Se crean los botones que representan las casillas del tablero
         self.mainframe = ttk.Frame(root, padding="12 12 12 12")
@@ -38,9 +37,6 @@ class JuegoDelGato:
         self.reinicio_boton = ttk.Button(self.mainframe, text="Reiniciar", command=self.reiniciar, style="TButton")
         self.reinicio_boton.grid(column=1, row=5, columnspan=3, sticky=(E, W))
 
-        for child in self.mainframe.winfo_children():
-            child.grid_configure(padx=5, pady=5)
-
         # Mostrar Ventana: La ventana del juego se muestra en la pantalla
         self.root.mainloop()
 
@@ -61,35 +57,21 @@ class JuegoDelGato:
 
         for a, b, c in combinaciones_ganadoras:
             if self.tablero[a] == self.tablero[b] == self.tablero[c] != "":
-                self.ganador = self.tablero[a]
-                self.mostrar_mensaje(f"Ganador: {self.ganador}", feliz=True)  # Muestra gato feliz
+                self.mostrar_mensaje(f"Ganador: {self.tablero[a]}")
                 self.reiniciar()
                 return
 
         if self.clicks == 9:  # Empate
-            self.mostrar_mensaje("Empate!", feliz=False)  # Muestra gato triste
+            self.mostrar_mensaje("Empate!")
             self.reiniciar()
 
-    def mostrar_mensaje(self, resultado, feliz):
-        if feliz:
-            gato = """
-             /\_/\  
-            ( ^.^ )
-             > ^ <
-            """
-        else:
-            gato = """
-             /\_/\  
-            ( -.- )
-             > ^ <
-            """
-        messagebox.showinfo("¡Juego Terminado!", f"{resultado}\n{gato}")
+    def mostrar_mensaje(self, resultado):
+        messagebox.showinfo("¡Juego Terminado!", resultado)
 
     def reiniciar(self):
         # Reinicio:
         self.tablero = [""] * 9  # Limpia el tablero
         self.clicks = 0  # Restablece el contador
-        self.ganador = None
         
         for fila in self.botones:
             for boton in fila:
