@@ -114,31 +114,32 @@
 <h2>Atributos</h2>
 
 <div class="attribute">
-    <strong>self.root</strong>
+    <strong>root</strong>
     <p>Referencia a la ventana principal de la aplicación Tkinter.</p>
     <p>Propósito: Permite configurar y gestionar la interfaz gráfica del juego.</p>
+    <p>Tipo de dato: tk</p>
 </div>
 
 <div class="attribute">
-    <strong>self.tablero</strong>
+    <strong>tablero</strong>
     <p>Lista que representa el estado del tablero del juego (9 posiciones).</p>
     <p>Propósito: Almacena los valores de las casillas del juego, donde cada posición puede estar vacía o contener "X" o "O".</p>
 </div>
 
 <div class="attribute">
-    <strong>self.clicks</strong>
+    <strong>clicks</strong>
     <p>Contador que lleva el registro de los clics realizados en el tablero.</p>
     <p>Propósito: Ayuda a determinar de quién es el turno (jugador "X" o "O") y a verificar si el juego ha terminado.</p>
 </div>
 
 <div class="attribute">
-    <strong>self.mainframe</strong>
+    <strong>mainframe</strong>
     <p>Marco principal que contiene los botones del tablero.</p>
     <p>Propósito: Organiza y presenta los botones en la interfaz gráfica.</p>
 </div>
 
 <div class="attribute">
-    <strong>self.botones</strong>
+    <strong>botones</strong>
     <p>Lista de listas que almacena los botones que representan las casillas del tablero.</p>
     <p>Propósito: Permite acceder y modificar las propiedades de cada botón de manera eficiente.</p>
 </div>
@@ -149,30 +150,35 @@
     <strong>_init_(self, root)</strong>
     <p>Constructor de la clase que inicializa la ventana del juego y los componentes gráficos.</p>
     <p>Propósito: Configura la interfaz gráfica, inicializa el tablero, los botones y establece los estilos.</p>
+    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
     <strong>jugar(self, indice)</strong>
     <p>Método que se llama cuando un jugador hace clic en una casilla del tablero.</p>
     <p>Propósito: Actualiza el estado del tablero, asignando "X" o "O" a la casilla seleccionada y verifica si el juego ha terminado.</p>
+    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
     <strong>verificar_ganador(self)</strong>
     <p>Método que verifica si hay un ganador o si el juego ha terminado en empate.</p>
     <p>Propósito: Comprueba las combinaciones ganadoras en el tablero y muestra un mensaje si hay un ganador o un empate.</p>
+    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
     <strong>mostrar_mensaje(self, resultado)</strong>
     <p>Muestra un mensaje emergente con el resultado del juego.</p>
     <p>Propósito: Informa al jugador sobre el resultado del juego (ganador o empate).</p>
+    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
     <strong>reiniciar(self)</strong>
     <p>Reinicia el estado del juego.</p>
     <p>Propósito: Limpia el tablero y restablece el contador de clics para permitir que los jugadores inicien una nueva partida.</p>
+    <p>Tipo de dato regresa: void</p>
 </div>
 <h1>Interfaz  <code>.</code></h1>
 <img src="interfaz.jpg" alt="Diagrama UML de JuegoDelGato">
