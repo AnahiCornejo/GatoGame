@@ -147,38 +147,33 @@
 <h2>Métodos</h2>
 
 <div class="method">
-    <strong>_init_(self, root)</strong>
+    <strong>void _init_(self, tk root)</strong>
     <p>Constructor de la clase que inicializa la ventana del juego y los componentes gráficos.</p>
     <p>Propósito: Configura la interfaz gráfica, inicializa el tablero, los botones y establece los estilos.</p>
-    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
-    <strong>jugar(self, indice)</strong>
+    <strong>void jugar(self, int indice)</strong>
     <p>Método que se llama cuando un jugador hace clic en una casilla del tablero.</p>
     <p>Propósito: Actualiza el estado del tablero, asignando "X" o "O" a la casilla seleccionada y verifica si el juego ha terminado.</p>
-    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
-    <strong>verificar_ganador(self)</strong>
+    <strong>void verificar_ganador(self)</strong>
     <p>Método que verifica si hay un ganador o si el juego ha terminado en empate.</p>
     <p>Propósito: Comprueba las combinaciones ganadoras en el tablero y muestra un mensaje si hay un ganador o un empate.</p>
-    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
-    <strong>mostrar_mensaje(self, resultado)</strong>
+    <strong>void mostrar_mensaje(self, str resultado)</strong>
     <p>Muestra un mensaje emergente con el resultado del juego.</p>
     <p>Propósito: Informa al jugador sobre el resultado del juego (ganador o empate).</p>
-    <p>Tipo de dato regresa: void</p>
 </div>
 
 <div class="method">
-    <strong>reiniciar(self)</strong>
+    <strong>void reiniciar(self)</strong>
     <p>Reinicia el estado del juego.</p>
     <p>Propósito: Limpia el tablero y restablece el contador de clics para permitir que los jugadores inicien una nueva partida.</p>
-    <p>Tipo de dato regresa: void</p>
 </div>
 <h1>Interfaz  <code>.</code></h1>
 <img src="interfaz.jpg" alt="Diagrama UML de JuegoDelGato">
