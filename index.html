@@ -20,32 +20,83 @@
     </pre>
 </div>
 
-<h1>Descripción del Juego.</h1>
-<p><strong>Inicio:</strong> El juego comienza y se crea la ventana principal.</p>
-<p><strong>Inicialización:</strong> Se inicializan las variables del juego, como el tablero y el contador de clics.</p>
-<p><strong>Creación de Botones:</strong> Se crean los botones que representan las casillas del tablero y el botón de reinicio.</p>
-<p><strong>Mostrar Ventana:</strong> La ventana del juego se muestra en la pantalla.</p>
-<p><strong>Función jugar(indice):</strong></p>
-<ul>
-    <li>Se verifica si la casilla seleccionada está vacía.</li>
-    <li>Si está vacía, se incrementa el contador de clics.</li>
-    <li>Dependiendo del número de clics, se asigna "O" o "X" a la casilla.</li>
-    <li>Se actualiza el texto del botón correspondiente.</li>
-</ul>
-<p><strong>Verificación de Ganador:</strong></p>
-<ul>
-    <li>Se llama a la función verificar_ganador().</li>
-    <li>Se comprueba si hay un ganador o un empate.</li>
-    <li>Si hay un ganador, se muestra un mensaje y se reinicia el juego.</li>
-</ul>
-<p><strong>Empate:</strong> Si no hay ganador y todas las casillas están ocupadas, se muestra un mensaje de empate y se pregunta si se desea reiniciar.</p>
-<p><strong>Reinicio:</strong></p>
-<ul>
-    <li>Si se decide reiniciar, la función reiniciar() limpia el tablero y restablece el contador de clics.</li>
-    <li>Se actualizan los botones para reflejar el estado inicial.</li>
-</ul>
-<p><strong>Fin:</strong> El juego vuelve a estar listo para jugar.</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción de Métodos - Juego del Gato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #000000;
+        }
+        h2 {
+            color: #000000;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        code {
+            background-color: #ffeef8;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
 
+<h1>Descripción de Métodos - Juego del Gato</h1>
+
+<h2>init()</h2>
+<p><strong>Propósito:</strong> Inicializa la ventana principal y configura el juego.</p>
+<ul>
+    <li>Inicializa la ventana principal y le da título, color de fondo.</li>
+    <li>Crea el array <code>self.tablero</code> para almacenar el estado del tablero.</li>
+    <li>Inicializa <code>self.clicks</code> en 0 para llevar el recuento de turnos.</li>
+    <li>Crea el marco principal <code>self.mainframe</code> para alojar los botones.</li>
+    <li>Con loops anida los botones dentro de <code>self.mainframe</code>.</li>
+</ul>
+
+<h2>jugar(indice)</h2>
+<p><strong>Propósito:</strong> Maneja la acción del jugador al hacer clic en un botón.</p>
+<ul>
+    <li>Recibe el índice del botón presionado.</li>
+    <li>Asigna el símbolo "X" u "O" en esa posición del tablero <code>self.tablero</code>.</li>
+    <li>Actualiza el texto del botón con el símbolo.</li>
+    <li>Incrementa <code>self.clicks</code>.</li>
+    <li>Llama a <code>verificar_ganador()</code> para revisar posible ganador.</li>
+</ul>
+
+<h2>verificar_ganador()</h2>
+<p><strong>Propósito:</strong> Verifica si hay un ganador o un empate.</p>
+<ul>
+    <li>Define las posibles combinaciones ganadoras.</li>
+    <li>Recorre combinaciones comparando valores en el tablero.</li>
+    <li>Si encuentra 3 iguales, llama a <code>mostrar_mensaje()</code> con el ganador.</li>
+    <li>También revisa el empate si <code>self.clicks == 9</code>.</li>
+</ul>
+
+<h2>mostrar_mensaje()</h2>
+<p><strong>Propósito:</strong> Muestra un mensaje al usuario.</p>
+<ul>
+    <li>Usa <code>Tkinter.messagebox</code> para mostrar un mensaje modal.</li>
+</ul>
+
+<h2>reiniciar()</h2>
+<p><strong>Propósito:</strong> Reinicia el estado del juego.</p>
+<ul>
+    <li>Reinicia el tablero a valores vacíos <code>[""]</code>.</li>
+    <li>Reinicia <code>self.clicks</code> a 0.</li>
+    <li>Recorre los botones y los pone en blanco para un nuevo juego.</li>
+</ul>
+
+</body>
+</html>
 
     <h1>Diagrama UML del Juego del Gato</h1>
 
