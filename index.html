@@ -4,13 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Gato y el Ratón</title>
-    <link rel="stylesheet" href="estilos.css">
     <link rel="icon" href="img/gato.jpg">
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #ffffff; /* Fondo blanco */
+            color: #000000; /* Texto negro */
+        }
+        header {
+            background: #000000; /* Fondo negro */
+            color: #ffffff; /* Texto blanco */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #000000; /* Texto negro */
+        }
+        .gato {
+            text-align: center;
+            font-size: 2em;
+        }
+        .content {
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000000; /* Borde negro */
+            border-radius: 8px;
+            display: block;
+            margin: 20px auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #efefef;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .attribute, .method {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #000000; /* Borde negro */
+            border-radius: 5px;
+            background-color: #ffffff; /* Fondo blanco */
+        }
+        pre {
+            background-color: #eeeeee; /* Fondo gris claro */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #000000; /* Borde negro */
+        }
+    </style>
 </head>
-<body class="titulo_inte">
+<body>
 
-<h1 class="titulo">"El gato y el ratón."</h1>
+<header>
+    <h1>"El Gato y el Ratón"</h1>
+</header>
 
 <div class="gato">
     <pre>
@@ -20,105 +85,100 @@
     </pre>
 </div>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descripción de Métodos - Juego del Gato</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #000000;
-        }
-        h2 {
-            color: #000000;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        code {
-            background-color: #ffeef8;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-    </style>
-</head>
-<body>
+<h1>Descripción del Juego del Gato</h1>
+<p>El <strong>Juego del Gato</strong>, también conocido como <strong>Tres en Raya</strong>, es un juego de estrategia para dos jugadores que se juega en un tablero cuadrado de 3x3 casillas. Cada jugador toma un turno para marcar una de las casillas con su símbolo, que puede ser una "X" o una "O". El objetivo es ser el primero en alinear tres de sus símbolos en línea, ya sea horizontal, vertical o diagonalmente.</p>
 
-<h1>Descripción de Métodos - Juego del Gato</h1>
-
-<h2>init()</h2>
-<p><strong>Propósito:</strong> Inicializa la ventana principal y configura el juego.</p>
+<h2>Reglas Básicas</h2>
 <ul>
-    <li>Inicializa la ventana principal y le da título, color de fondo.</li>
-    <li>Crea el array <code>self.tablero</code> para almacenar el estado del tablero.</li>
-    <li>Inicializa <code>self.clicks</code> en 0 para llevar el recuento de turnos.</li>
-    <li>Crea el marco principal <code>self.mainframe</code> para alojar los botones.</li>
-    <li>Con loops anida los botones dentro de <code>self.mainframe</code>.</li>
+    <li><strong>Tablero</strong>: Un cuadrado de 3x3.</li>
+    <li><strong>Jugadores</strong>: Dos jugadores alternan turnos.</li>
+    <li><strong>Objetivo</strong>: Alinear tres símbolos (X o O) antes que el oponente.</li>
+    <li><strong>Empate</strong>: Si todas las casillas están ocupadas y no hay ganador, el juego termina en empate.</li>
 </ul>
 
-<h2>jugar(indice)</h2>
-<p><strong>Propósito:</strong> Maneja la acción del jugador al hacer clic en un botón.</p>
+<h2>Dinámica del Juego</h2>
 <ul>
-    <li>Recibe el índice del botón presionado.</li>
-    <li>Asigna el símbolo "X" u "O" en esa posición del tablero <code>self.tablero</code>.</li>
-    <li>Actualiza el texto del botón con el símbolo.</li>
-    <li>Incrementa <code>self.clicks</code>.</li>
-    <li>Llama a <code>verificar_ganador()</code> para revisar posible ganador.</li>
+    <li><strong>Inicio</strong>: Los jugadores deciden quién comienza y eligen sus símbolos.</li>
+    <li><strong>Turnos</strong>: En cada turno, un jugador selecciona una casilla vacía y coloca su símbolo.</li>
+    <li><strong>Verificación</strong>: Después de cada jugada, se verifica si hay un ganador o si el juego ha terminado en empate.</li>
+    <li><strong>Reinicio</strong>: Si el juego termina, se puede reiniciar para jugar nuevamente.</li>
 </ul>
 
-<h2>verificar_ganador()</h2>
-<p><strong>Propósito:</strong> Verifica si hay un ganador o un empate.</p>
-<ul>
-    <li>Define las posibles combinaciones ganadoras.</li>
-    <li>Recorre combinaciones comparando valores en el tablero.</li>
-    <li>Si encuentra 3 iguales, llama a <code>mostrar_mensaje()</code> con el ganador.</li>
-    <li>También revisa el empate si <code>self.clicks == 9</code>.</li>
-</ul>
+<p>El Juego del Gato es sencillo pero adictivo, ideal para todas las edades, y fomenta el pensamiento estratégico y la planificación.</p>
 
-<h2>mostrar_mensaje()</h2>
-<p><strong>Propósito:</strong> Muestra un mensaje al usuario.</p>
-<ul>
-    <li>Usa <code>Tkinter.messagebox</code> para mostrar un mensaje modal.</li>
-</ul>
+<h1>Diagrama UML - Clase <code>JuegoDelGato</code></h1>
+<img src="Diagrama.jpg" alt="Diagrama UML de JuegoDelGato">
 
-<h2>reiniciar()</h2>
-<p><strong>Propósito:</strong> Reinicia el estado del juego.</p>
-<ul>
-    <li>Reinicia el tablero a valores vacíos <code>[""]</code>.</li>
-    <li>Reinicia <code>self.clicks</code> a 0.</li>
-    <li>Recorre los botones y los pone en blanco para un nuevo juego.</li>
-</ul>
+<h1>Documentación de la Clase <code>JuegoDelGato</code></h1>
 
-</body>
-</html>
+<h2>Atributos</h2>
 
-    <h1>Diagrama UML del Juego del Gato</h1>
+<div class="attribute">
+    <strong>self.root</strong>
+    <p>Referencia a la ventana principal de la aplicación Tkinter.</p>
+    <p>Propósito: Permite configurar y gestionar la interfaz gráfica del juego.</p>
+</div>
 
-    <div class="uml-box">
-        <h2>JuegoDelGato</h2>
-        <p>- tablero: String[]</p>
-        <p>- clicks: int</p>
-        <p>- ganador: String?</p>
-        <p>- jugadorActual: String</p>
-        <p>------------------------</p>
-        <p>+ jugar(indice: int): void</p>
-        <p>+ verificar_ganador(): void</p>
-        <p>+ mostrar_mensaje(resultado: String, feliz: boolean): void</p>
-        <p>+ reiniciar(): void</p>
-        <p>+ cambiar_jugador(): void</p>
-    </div>
-    
-    <div class="inte">
-        <h2 class="titulo_inte">Integrantes:</h2>
-        <h4><a href="https://github.com/SebastianHernadez">Sebastián Hernández Ángeles</a></h4>
-        <h4><a href="https://github.com/AnahiCornejo">Anai Cornejo López</a></h4>
-    
+<div class="attribute">
+    <strong>self.tablero</strong>
+    <p>Lista que representa el estado del tablero del juego (9 posiciones).</p>
+    <p>Propósito: Almacena los valores de las casillas del juego, donde cada posición puede estar vacía o contener "X" o "O".</p>
+</div>
+
+<div class="attribute">
+    <strong>self.clicks</strong>
+    <p>Contador que lleva el registro de los clics realizados en el tablero.</p>
+    <p>Propósito: Ayuda a determinar de quién es el turno (jugador "X" o "O") y a verificar si el juego ha terminado.</p>
+</div>
+
+<div class="attribute">
+    <strong>self.mainframe</strong>
+    <p>Marco principal que contiene los botones del tablero.</p>
+    <p>Propósito: Organiza y presenta los botones en la interfaz gráfica.</p>
+</div>
+
+<div class="attribute">
+    <strong>self.botones</strong>
+    <p>Lista de listas que almacena los botones que representan las casillas del tablero.</p>
+    <p>Propósito: Permite acceder y modificar las propiedades de cada botón de manera eficiente.</p>
+</div>
+
+<h2>Métodos</h2>
+
+<div class="method">
+    <strong>_init_(self, root)</strong>
+    <p>Constructor de la clase que inicializa la ventana del juego y los componentes gráficos.</p>
+    <p>Propósito: Configura la interfaz gráfica, inicializa el tablero, los botones y establece los estilos.</p>
+</div>
+
+<div class="method">
+    <strong>jugar(self, indice)</strong>
+    <p>Método que se llama cuando un jugador hace clic en una casilla del tablero.</p>
+    <p>Propósito: Actualiza el estado del tablero, asignando "X" o "O" a la casilla seleccionada y verifica si el juego ha terminado.</p>
+</div>
+
+<div class="method">
+    <strong>verificar_ganador(self)</strong>
+    <p>Método que verifica si hay un ganador o si el juego ha terminado en empate.</p>
+    <p>Propósito: Comprueba las combinaciones ganadoras en el tablero y muestra un mensaje si hay un ganador o un empate.</p>
+</div>
+
+<div class="method">
+    <strong>mostrar_mensaje(self, resultado)</strong>
+    <p>Muestra un mensaje emergente con el resultado del juego.</p>
+    <p>Propósito: Informa al jugador sobre el resultado del juego (ganador o empate).</p>
+</div>
+
+<div class="method">
+    <strong>reiniciar(self)</strong>
+    <p>Reinicia el estado del juego.</p>
+    <p>Propósito: Limpia el tablero y restablece el contador de clics para permitir que los jugadores inicien una nueva partida.</p>
+</div>
+
+<div class="inte">
+    <h2 class="titulo_inte">Integrantes:</h2>
+    <h4><a href="https://github.com/SebastianHernadez">Sebastián Hernández Ángeles</a></h4>
+    <h4><a href="https://github.com/AnahiCornejo">Anai Cornejo López</a></h4>
 </div>
 
 </body>
